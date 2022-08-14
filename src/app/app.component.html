@@ -1,4 +1,14 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h2>Two Way Data Bainding</h2>
+
+<input type="text" name="value" #name [(ngModel)]="value" />
+<p>You entered {{ value }}</p>
+<button (click)="clearValue()">Clear</button>
+
+<input type="text" name="name" ngModel (ngModelChange)="nameChanged($event)" />
+
+<hr />
+
+<input type="text" name="name1" (change)="name1Changed($event)" />
+<br />
+<br />
+<input type="text" name="name2" (input)="name1Changed($event)" />
